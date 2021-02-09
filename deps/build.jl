@@ -38,7 +38,7 @@ for line in lines
             @warn "$url didn't want to download..."
         end
         pluto_file = line[1:findfirst(':', line) - 1]
-        _replace(pluto_file, url => "/offline_assets/$(basename(file))")
+        _replace(pluto_file, url => "offline_assets/$(basename(file))")
     end
 end
 
@@ -46,17 +46,4 @@ end
 _replace(
     joinpath(pluto_dest, "src", "Pluto.jl"),
     "pathof(Pluto)" => """joinpath(@__DIR__, "..")"""
-)
-
-#-----------------------------------------------------------------------------# Add Plotly
-# TODO: This doesn't appear to fix the `Plotly not defined` issue
-@info "Writing Plotly.js directly into editor.html"
-write(
-    touch(joinpath(assets, "plotly-latest.min.js")), 
-    read(`curl --silent /dev/null https://cdn.plot.ly/plotly-latest.min.js`)
-)
-
-_replace(
-    joinpath(frontend, "editor.html"),
-    "<head>" => "<head><script src=\"/offline_assets/plotly-latest.min.js\"></script>"
 )

@@ -1,7 +1,7 @@
 name = "OfflinePluto"
 uuid = "4225f6c6-fccb-4ba9-b8c3-4ab8fb53b999"
 authors = ["joshday <emailjoshday@gmail.com> and contributors"]
-version = "0.1.0"
+version = "0.12.20"
 
 [deps]
 Base64 = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
