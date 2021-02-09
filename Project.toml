@@ -3,8 +3,12 @@ uuid = "4225f6c6-fccb-4ba9-b8c3-4ab8fb53b999"
 authors = ["joshday <emailjoshday@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+Pluto = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
+
 [compat]
 julia = "1"
+Pluto = "= 0.12.20"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
