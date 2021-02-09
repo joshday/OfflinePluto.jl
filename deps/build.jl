@@ -21,12 +21,15 @@ mkpath(assets)
 
 lines = split(read(`grep -r "jsdelivr" $frontend`, String), '\n')
 
+replaced_assets = []
+
 for line in lines 
     match = findfirst(r"((?<=\")https:\/\/[^\"]*)|((?<=\()https:\/\/[^\)]*)", line)
     if isnothing(match)
         @debug "No match found for line: $line"
     else
         url = line[match]
+        push!(replaced_assets, url)
         @info "Downloading: $url"
         file = touch(joinpath(assets, basename(url)))
         try
@@ -42,7 +45,7 @@ end
 #-----------------------------------------------------------------------------# Fir project_relative_path
 _replace(
     joinpath(pluto_dest, "src", "Pluto.jl"),
-    "normpath(joinpath(dirname(dirname(pathof(Pluto))), xs...))" => "normpath($(joinpath(@__DIR__(), "..")))"
+    "pathof(Pluto)" => """joinpath(@__DIR__, "..")"""
 )
 
 #-----------------------------------------------------------------------------# Add Plotly
