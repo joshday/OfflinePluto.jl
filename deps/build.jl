@@ -42,13 +42,14 @@ for line in lines
     end
 end
 
-#-----------------------------------------------------------------------------# Fir project_relative_path
+#-----------------------------------------------------------------------------# Fix project_relative_path
 _replace(
     joinpath(pluto_dest, "src", "Pluto.jl"),
     "pathof(Pluto)" => """joinpath(@__DIR__, "..")"""
 )
 
 #-----------------------------------------------------------------------------# Add Plotly
+# TODO: This doesn't appear to fix the `Plotly not defined` issue
 @info "Writing Plotly.js directly into editor.html"
 write(
     touch(joinpath(assets, "plotly-latest.min.js")), 
