@@ -1,5 +1,18 @@
 using Pluto
 
+function joinpath(path::AbstractString, paths::AbstractString...)::String
+    for p in paths
+        if isabspath(p)
+            path = p
+        elseif isempty(path) || path[end] == '/'
+            path *= p
+        else
+            path *= "/" * p
+        end
+    end
+    return path
+end
+
 #-----------------------------------------------------------------------------# Copy Pluto files
 @info "Copying Pluto source code..."
 pluto_src = abspath(joinpath(pathof(Pluto), "..", ".."))
