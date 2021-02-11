@@ -22,6 +22,7 @@ UUIDs = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 
 [compat]
 FuzzyCompletions = "0.4"
+HTTP = "0.9"
 MsgPack = "1.1"
 Pluto = "= 0.12.20"
 Tables = "1.3"
