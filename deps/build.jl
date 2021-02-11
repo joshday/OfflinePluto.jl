@@ -5,6 +5,6 @@ mkpath(dir)
 
 for url in readlines(joinpath(@__DIR__, "assets.csv") )
     @info "Downloading: $url"
-    file = touch(dir, basename(url))
+    file = touch(joinpath(dir, basename(url)))
     download(url, file)
 end
