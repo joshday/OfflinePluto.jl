@@ -1,3 +1,6 @@
 /Manifest.toml
 *.log
-deps/Pluto/
+deps/Pluto/frontend/offline_assets
+deps/Pluto/.github
+deps/Pluto/.vscode
+deps/Pluto/test

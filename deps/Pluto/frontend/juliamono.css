@@ -1,0 +1,29 @@
+@font-face {
+    font-family: JuliaMono;
+    src: url("/offline_assets/JuliaMono-RegularLatin.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 400;
+    unicode-range: U+00-7F; /* Basic Latin characters */
+}
+
+@font-face {
+    font-family: JuliaMono;
+    src: url("/offline_assets/JuliaMono-BoldLatin.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 700;
+    unicode-range: U+00-7F; /* Basic Latin characters */
+}
+
+@font-face {
+    font-family: JuliaMono;
+    src: url("/offline_assets/JuliaMono-Regular.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: JuliaMono;
+    src: url("/offline_assets/JuliaMono-Bold.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 700;
+}
